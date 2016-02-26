@@ -23,7 +23,7 @@
         ));
     });
 
-    $app->get("/stylists{id}", function($id) use ($app) {
+    $app->get("/stylists/{id}", function($id) use ($app) {
         $stylist = Stylist::find($id);
         // $clients = Client::find($id);
 
@@ -31,9 +31,7 @@
             'stylist' => $stylist,
             // 'clients' = $clients
         ));
-        //YOU STOPPED HERE! RENDER YOUR PAGE, FUCK WITH IT UNTIL IT WORKS, AND THEN START ADDING DELETE/UPDATE BUTTONS.
-
-        //NEXT: ADD THE CLIENT CLASS
+        //ADD UPDATE BUTTONS.
     });
 
     $app->post("/stylists", function() use ($app) {

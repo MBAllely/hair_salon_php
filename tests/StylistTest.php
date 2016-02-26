@@ -12,7 +12,7 @@
     $password = 'root';
     $DB = new PDO($server, $username, $password);
 
-    class ClassStylist extends PHPUnit_Framework_TestCase
+    class StylistTest extends PHPUnit_Framework_TestCase
     {
         protected function tearDown()
         {
