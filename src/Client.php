@@ -69,10 +69,12 @@ class Client
         return $clients;
     }
 
-    function updateClientName($new_client_name)
+    function updateClient($new_client_name, $new_phone)
     {
         $GLOBALS['DB']->exec("UPDATE clients SET client_name = '{$new_client_name}' WHERE id = {$this->getId()};");
         $this->setClientName($new_client_name);
+        $GLOBALS['DB']->exec("UPDATE clients SET phone = '{$new_phone}' WHERE id = {$this->getId()};");
+        $this->setPhone($new_phone);
     }
 
     static function deleteAll()
