@@ -47,6 +47,21 @@
 
         }
 
+        function test_getStylistId()
+        {
+            //Arrange
+            $client_name = "Janice";
+            $phone = 9075558989;
+            $stylist_id = 1;
+            $test_client = new Client($client_name, $phone, $stylist_id);
+
+            //Act
+            $result = $test_client->getStylistId();
+
+            //Assert
+            $this->assertEquals($stylist_id, $result);
+
+        }
 
 
     }

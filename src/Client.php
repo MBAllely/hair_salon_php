@@ -37,7 +37,7 @@ class Client
 
     function getStylistId()
     {
-
+        return $this->stylist_id;
     }
 
     function getId()
