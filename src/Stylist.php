@@ -61,10 +61,22 @@ class Stylist
         return $stylist;
     }
 
-    // function getClients()
-    // {
-    //
-    // }
+    function getClients()
+    {
+        $clients = [];
+        $returned_clients = $GLOBALS['DB']->query("SELECT * FROM clients WHERE stylist_id = '{$this->getId()}'");
+
+        foreach ($returned_clients as $client)
+        {
+            $client_name = $client['client_name'];
+            $phone = $client['phone'];
+            $stylist_id = $client['stylist_id'];
+            $id = $client['id'];
+            $new_client = new Client($client_name, $phone, $stylist_id, $id);
+            array_push($clients, $new_client);
+        }
+        return $clients;
+    }
 
     function update($new_name)
     {
