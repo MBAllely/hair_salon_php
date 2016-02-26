@@ -38,6 +38,7 @@ class Stylist
     {
         $returned_stylists = $GLOBALS['DB']->query("SELECT * FROM stylists;");
         $stylists = array();
+
         foreach ($returned_stylists as $stylist) {
             $name = $stylist['name'];
             $id = $stylist['id'];
