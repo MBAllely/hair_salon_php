@@ -118,7 +118,7 @@
             $this->assertEquals($test_stylist2, $result);
         }
 
-        function test_update()
+        function test_updateStylist()
         {
             // Arrange
             $name = "Linda";
@@ -128,7 +128,7 @@
             $new_name = "Belva";
 
             // Act
-            $test_stylist->update($new_name);
+            $test_stylist->updateStylist($new_name);
 
             // Assert
             $this->assertEquals("Belva", $test_stylist->getName());
