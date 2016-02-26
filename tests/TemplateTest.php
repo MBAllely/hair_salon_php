@@ -28,5 +28,36 @@
             // Assert
             $this->assertEquals($name, $result);
         }
+
+        function test_getPhone()
+        {
+            // Arrange
+            $name = "Linda";
+            $phone = 9075553838;
+            $id = null;
+            $test_stylist = new Stylist($name, $phone, $id);
+
+            // Act
+            $result = $test_stylist->getPhone();
+
+            // Assert
+            $this->assertEquals($phone, $result);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
  ?>
