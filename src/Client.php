@@ -69,6 +69,12 @@ class Client
         return $clients;
     }
 
+    function updateClientName($new_client_name)
+    {
+        $GLOBALS['DB']->exec("UPDATE clients SET client_name = '{$new_client_name}' WHERE id = {$this->getId()};");
+        $this->setClientName($new_client_name);
+    }
+
     static function deleteAll()
     {
         $GLOBALS['DB']->exec("DELETE FROM clients;");
