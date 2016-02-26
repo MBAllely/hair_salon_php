@@ -1,0 +1,46 @@
+<form action='/clients' method='post'>
+    <input id="stylist_id" name="stylist_id" type="hidden" value="{{ stylist.getId }}">
+    <label for='client_name'>Client Name</label>
+    <input id='client_name' name='client_name' type='text'>
+
+    <button type='submit'>Add client</button>
+</form>
+
+{% if clients is not empty %}
+    <p>Here are the clients:</p>
+    <ul>
+        {% for client in clients %}
+            <li>
+                <h3>{{ client.getName }}</h3>
+                <h4>Phone: {{ client.getPhone }}</h4>
+                <h4>Reviews<h4>
+                {% if reviews == true %}
+                    {% for review in reviews %}
+                    <ul>
+
+                            {% if review.getRestaurantId == client.getId %}
+                            <li>
+                            <p>{{ review.getDescription }}</p>
+                            <p>Rating: <em>{{ review.getRating }}</em></p>
+                            </li>
+                            {% endif %}
+
+                    </ul>
+                    {% endfor %}
+                {% endif %}
+
+
+                <form action="/clients/{{ client.getId }}/edit" method="get">
+                    <button type="submit" name="button">Edit client</button>
+                </form>
+                <form action="/clients/{{ client.getId }}/review" method="get">
+                    <button type="submit" name="button">Review this client</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+    <form action="/delete_clients/{{ stylist.getId }}" method="post">
+        <input name="_method" type="hidden" value="delete">
+        <button type="submit" name="button">Delete clients</button>
+    </form>
+{% endif %}
