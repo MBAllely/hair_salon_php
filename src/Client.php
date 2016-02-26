@@ -25,7 +25,7 @@ class Client
         $this->phone = $new_phone;
     }
 
-    function getName()
+    function getClientName()
     {
         return $this->client_name;
     }
@@ -43,6 +43,17 @@ class Client
     function getId()
     {
         return $this->id;
+    }
+
+    function save()
+    {
+        $GLOBALS['DB']->exec("INSERT INTO clients (client_name, phone, stylist_id) VALUES ('{$this->getClientName()}', {$this->getPhone()}, {$this->getStylistId()})");
+        $this->id = $GLOBALS['DB']->lastInsertId();
+    }
+
+    static function getAll()
+    {
+
     }
 
 }

@@ -15,7 +15,7 @@
     class ClientTest extends PHPUnit_Framework_TestCase
     {
 
-        function test_getName()
+        function test_getClientName()
         {
             //Arrange
             $client_name = "Janice";
@@ -24,7 +24,7 @@
             $test_client = new Client($client_name, $phone, $stylist_id);
 
             //Act
-            $result = $test_client->getName();
+            $result = $test_client->getClientName();
 
             //Assert
             $this->assertEquals($client_name, $result);
@@ -77,6 +77,23 @@
 
             //Assert
             $this->assertEquals(true, is_numeric($result));
+
+        }
+
+        function test_save()
+        {
+            //Arrange
+            $client_name = "Janice";
+            $phone = 9075558989;
+            $stylist_id = 1;
+            $id = 1;
+            $test_client = new Client($client_name, $phone, $stylist_id, $id);
+
+            //Act
+            $result = Client::getAll();
+
+            //Assert
+            $this->assertEquals([$test_client], $result);
 
         }
 
