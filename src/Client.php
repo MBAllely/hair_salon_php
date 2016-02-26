@@ -32,7 +32,7 @@ class Client
 
     function getPhone()
     {
-
+        return $this->phone;
     }
 
     function getStylistId()
