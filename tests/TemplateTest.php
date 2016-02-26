@@ -1,8 +1,18 @@
-<!-- testing with php unit, use this template for guidance -->
 <?php
-    require_once __DIR__ . '/../src/Class.php';
 
-    class ClassTest extends PHPUnit_Framework_TestCase
+    /**
+    * @backupGlobals disabled
+    * @backupStaticAttributes disabled
+    */
+
+    require_once __DIR__ . '/../src/Stylist.php';
+
+    $server = 'mysql:host=localhost;dbname=hair_salon_test';
+    $username = 'root';
+    $password = 'root';
+    $DB = new PDO($server, $username, $passoword);
+
+    class ClassStylist extends PHPUnit_Framework_TestCase
     {
         function test_methodToTest_inputDescription()
         {
