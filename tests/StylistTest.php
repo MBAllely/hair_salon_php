@@ -100,6 +100,24 @@
             $this->assertEquals([], $result);
         }
 
+        function test_find()
+        {
+            // Arrange
+            $name = "Linda";
+            $test_stylist = new Stylist($name);
+            $test_stylist->save();
+
+            $name2 = "Rodrigo";
+            $test_stylist2 = new Stylist($name2);
+            $test_stylist2->save();
+
+            // Act
+            $result = Stylist::find($test_stylist2->getId());
+
+            // Assert
+            $this->assertEquals($test_stylist2, $result);
+        }
+
         function test_update()
         {
             // Arrange
