@@ -42,7 +42,7 @@ class Client
 
     function getId()
     {
-
+        return $this->id;
     }
 
 }
