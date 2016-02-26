@@ -6,6 +6,7 @@
     */
 
     require_once __DIR__ . '/../src/Stylist.php';
+    require_once __DIR__ . '/../src/Client.php';
 
     $server = 'mysql:host=localhost;dbname=hair_salon_test';
     $username = 'root';
@@ -17,6 +18,7 @@
         protected function tearDown()
         {
             Stylist::deleteAll();
+            Client::deleteAll();
         }
         function test_getName()
         {
@@ -99,6 +101,7 @@
             // Assert
             $this->assertEquals([], $result);
         }
+
 
         function test_find()
         {

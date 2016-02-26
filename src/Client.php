@@ -77,6 +77,11 @@ class Client
         $this->setPhone($new_phone);
     }
 
+    function deleteOneClient()
+    {
+        $GLOBALS['DB']->exec("DELETE FROM clients WHERE id = {$this->getId()};");
+    }
+
     static function deleteAll()
     {
         $GLOBALS['DB']->exec("DELETE FROM clients;");
