@@ -83,7 +83,7 @@
     });
 
 
-    $app->post("/clients", function($id) use ($app) {
+    $app->post("/clients", function() use ($app) {
         $client_name = $_POST['client_name'];
         $phone = $_POST['phone'];
         $stylist_id = $_POST['stylist_id'];
@@ -92,7 +92,7 @@
         $stylist = Stylist::find($stylist_id);
         return $app['twig']->render('stylists.html.twig', array(
             'stylist' => $stylist,
-            'clients' => Stylist::getClients()
+            'clients' => $stylist->getClients()
         ));
     });
 
