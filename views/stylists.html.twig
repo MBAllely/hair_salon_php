@@ -17,10 +17,7 @@
                 <h4>Phone: {{ client.getPhone }}</h4>
 
                 <p><a href="/clients/{{ client.getId }}/edit">Edit this client</a></p>
-                <form action="/clients/{{client.getId }}/delete" method="post">
-                    <input name="_method" type="hidden" value="delete">
-                    <button type="submit" name="button">Delete client</button>
-                </form>
+                
             </li>
         {% endfor %}
         </ul>

@@ -26,7 +26,6 @@
 
     $app->get("/stylists/{id}", function($id) use ($app) {
         $stylist = Stylist::find($id);
-        var_dump($stylist);
         $clients = $stylist->getClients();
 
         return $app['twig']->render('stylists.html.twig', array(
