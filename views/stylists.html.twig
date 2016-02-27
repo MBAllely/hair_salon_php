@@ -19,11 +19,15 @@
                 <form action="/clients/{{ client.getId }}/edit" method="get">
                     <button type="submit" name="button">Edit client</button>
                 </form>
+                <form action="/client/{{client.getId }}/delete" method="post">
+                    <input name="_method" type="hidden" value="delete">
+                    <button type="submit" name="button">Delete client</button>
+                </form>
             </li>
         {% endfor %}
         </ul>
 
-        <form action="/delete_clients/{{ stylist.getId }}" method="post">
+        <form action="/clients/{{ stylist.getId }}/delete" method="post">
             <input name="_method" type="hidden" value="delete">
             <button type="submit" name="button">Delete clients</button>
         </form>
