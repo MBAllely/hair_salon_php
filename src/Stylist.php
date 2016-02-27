@@ -58,7 +58,7 @@ class Stylist
             if ($stylist->getId() == $search_id)
             $found_stylist = $stylist;
         }
-        return $stylist;
+        return $found_stylist;
     }
 
     function getClients()

@@ -42,11 +42,15 @@
             $id = 1;
             $test_stylist = new Stylist($name, $id);
 
+            $name2 = "Rodrigo";
+            $id2 = 2;
+            $test_stylist2 = new Stylist($name2, $id2);
+
             // Act
-            $result = $test_stylist->getId();
+            $result = $test_stylist2->getId();
 
             // Assert
-            $this->assertEquals(true, is_numeric($result));
+            $this->assertEquals($id2, 2);
         }
 
         function test_save()
@@ -114,11 +118,15 @@
             $test_stylist2 = new Stylist($name2);
             $test_stylist2->save();
 
+            $name3 = "Don";
+            $test_stylist3 = new Stylist($name3);
+            $test_stylist3->save();
+
             // Act
-            $result = Stylist::find($test_stylist2->getId());
+            $result = Stylist::find($test_stylist->getId());
 
             // Assert
-            $this->assertEquals($test_stylist2, $result);
+            $this->assertEquals($test_stylist, $result);
         }
 
         function test_updateStylist()
