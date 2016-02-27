@@ -16,10 +16,8 @@
                 <h3>{{ client.getClientName }}</h3>
                 <h4>Phone: {{ client.getPhone }}</h4>
 
-                <form action="/clients/{{ client.getId }}/edit" method="get">
-                    <button type="submit" name="button">Edit client</button>
-                </form>
-                <form action="/client/{{client.getId }}/delete" method="post">
+                <p><a href="/clients/{{ client.getId }}/edit">Edit this client</a></p>
+                <form action="/clients/{{client.getId }}/delete" method="post">
                     <input name="_method" type="hidden" value="delete">
                     <button type="submit" name="button">Delete client</button>
                 </form>
