@@ -1,5 +1,7 @@
 <html>
 <head>
+    link href="css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="styles.css" rel="stylesheet" type="text/css" media="all">
     <title>{{stylist.getName }}'s Client List</title>
 </head>
 <body>
@@ -17,7 +19,7 @@
                 <h4>Phone: {{ client.getPhone }}</h4>
 
                 <p><a href="/clients/{{ client.getId }}/edit">Edit this client</a></p>
-                
+
             </li>
         {% endfor %}
         </ul>
