@@ -1,3 +1,16 @@
 body {
     background-image: url("http://www.themesltd.com/backgrounds/hipster/space_astronauts.png");
 }
+
+footer {
+    color: white;
+    text-align: center;
+    padding-top: 5em;
+}
+
+.box {
+    background: white;
+    width: 700px;
+    padding: 1em;
+    border-radius: 15px;
+}

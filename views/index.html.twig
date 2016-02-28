@@ -2,34 +2,36 @@
 <html>
   <head>
     <meta charset="utf-8">
-    link href="css/bootstrap.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link href="styles.css" rel="stylesheet" type="text/css" media="all">
     <title>Curl up and Dye Hair Salon</title>
   </head>
   <body>
-      <h1>- Curl Up and Dye Hair Salon -</h1>
-      <p>Add a new sylist: </p>
+      <div class="box container">
+          <h1>- Curl Up and Dye Hair Salon -</h1>
+          <p>Add a new sylist: </p>
 
-      <form action="/stylists" method="post">
-            <label for="name">Stylist name:</label>
-            <input id="name" name="name" type="text">
+          <form action="/stylists" method="post">
+                <label for="name">Stylist name:</label>
+                <input id="name" name="name" type="text">
 
-            <button type="submit">Add stylist!</button>
-        </form>
-
-        {% if stylists is not empty %}
-            <p>Here are all your stylists:</p>
-            <ul>
-                {% for stylist in stylists %}
-                    <li><a href="/stylists/{{ stylist.getId }}">{{ stylist.getName }}</a></li>
-                {% endfor %}
-            </ul>
-            <form action="/delete_stylists" method="post">
-                <button type="submit" name="button">Delete All Stylists</button>
+                <button type="submit" class="btn btn-success">Add stylist!</button>
             </form>
-        {% else %}
-          <p>There are no stylists yet!</p>
-        {% endif %}
 
+            {% if stylists is not empty %}
+                <p>Here are all your stylists:</p>
+                <ul>
+                    {% for stylist in stylists %}
+                        <li><a href="/stylists/{{ stylist.getId }}">{{ stylist.getName }}</a></li>
+                    {% endfor %}
+                </ul>
+                <form action="/delete_stylists" method="post">
+                    <button type="submit" class="btn btn-danger">Delete All Stylists</button>
+                </form>
+            {% else %}
+              <p>There are no stylists yet!</p>
+            {% endif %}
+        </div>
+        <footer>No one cuts your hair in space</footer>
   </body>
 </html>
