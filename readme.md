@@ -25,6 +25,8 @@ _The goal of this code review is to show basic understanding and competency with
 
 _When a stylist is edited, the clients don't appear on the page unless another client is added.  Eh._
 
+_Oh, and the CSS doesn't work on all the pages.  But that's for the front end nerds (dear front end nerds: please fix my pages)._
+
 ## Support and contact details
 
 _If you have any questions, concerns, or feedback, please contact me through_ [gitHub](https://github.com/MBAllely/).
